@@ -1,0 +1,19 @@
+{
+  "name": "vdmcli",
+  "version": "0.0.1",
+  "description": "A command-line tool for vdm devops purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fred Prieur",
+  "license": "ISC",
+  "bin": {
+    "vdmcli": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "request": "^2.73.0"
+  }
+}
