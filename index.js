@@ -15,7 +15,7 @@ program
     console.log('create a project named "%s"', name);
     file.CreateDockerfile();
     file.CreateJenkinsfile();
-    github.CreateRepo(name);
+    //github.CreateRepo(name);
     git.PushNewrepo(workdir+"src",name)
   });
 

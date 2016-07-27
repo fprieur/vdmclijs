@@ -34,7 +34,7 @@ function gitCommit(repo_path) {
 }
 
 function gitAddRemoteOrigin(repo_path,repo_name){
-  child = exec("git remote add origin git@github.com:fprieur/"+repo_name+".git ", function (error, stdout, stderr) {
+  child = exec("git remote add git@github.com:fprieur/"+repo_name+".git ", function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
@@ -65,10 +65,10 @@ function PushNewrepo(repo_path, repo_name){
   gitCommit(repo_path);
 
   //git create new remote origin
-  gitAddRemoteOrigin(repo_path,repo_name);
+  //gitAddRemoteOrigin(repo_path,repo_name);
 
   //git push on master
-  gitPush(repo_path);
+  //gitPush(repo_path);
 
 }
 
