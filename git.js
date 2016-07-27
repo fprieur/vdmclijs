@@ -24,7 +24,7 @@ function gitAdd(repo_path){
 }
 
 function gitCommit(repo_path) {
-  child = exec("git commit -m \"init "+"from vdmcli\" ", function (error, stdout, stderr) {
+  child = exec("git commit -m 'init from vdmcli' ", function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
