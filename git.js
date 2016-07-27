@@ -66,7 +66,10 @@ function PushNewrepo(repo_path, repo_name){
 }, 2000);
   //git add new files
   gitAdd(repo_path);
-
+  
+  setTimeout(function(){
+    //do what you need here
+}, 2000);
   //git commit -m from vdmcli
   gitCommit(repo_path);
 
