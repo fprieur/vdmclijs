@@ -14,7 +14,7 @@ function gitInit(repo_path){
 }
 
 function gitAdd(repo_path){
-  child = exec("git add .", function (error, stdout, stderr) {
+  child = exec("git add --all", function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
