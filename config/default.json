@@ -2,7 +2,7 @@
   "Github": {
     "token": "4b79cc65f6195ff46e670cd30b2bb053c9357596"
   },
-  "Workdir": {
-    "dev": "/Users/fprieur/Desktop/"
+  "workdir": {
+    "dev": "/tmp/"
   }
 }

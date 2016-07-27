@@ -3,6 +3,9 @@
 const program = require('commander');
 var file = require('./file');
 var github = require ('./github');
+var git = require('./git');
+var config = require('config');
+var workdir = config.get('workdir.dev');
 
 program
   .version('0.0.1')
@@ -12,6 +15,8 @@ program
     console.log('create a project named "%s"', name);
     file.CreateDockerfile();
     file.CreateJenkinsfile();
+    github.CreateRepo(name);
+    git.PushNewrepo(workdir+"src",name)
   });
 
 program
@@ -20,6 +25,14 @@ program
   .action(function(name){
     console.log('Create the repo  "%s"', name);
     github.CreateRepo(name);
+  });
+
+program
+  .command("git")
+  .description('test git')
+  .action(function(name){
+    console.log('Create the repo  "%s"', name);
+    git.PushNewrepo();
   });
 
 program.parse(process.argv);
