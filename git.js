@@ -56,22 +56,21 @@ function gitPush(repo_path){
 function PushNewrepo(repo_path, repo_name){
 
   setTimeout(function(){
-    //do what you need here
-}, 2000);
+    // git init new repo locally
+    gitInit(repo_path);
+}, 3000);
 
-  // git init new repo locally
-  gitInit(repo_path);
   setTimeout(function(){
-    //do what you need here
-}, 2000);
-  //git add new files
-  gitAdd(repo_path);
-  
+    //git add new files
+    gitAdd(repo_path);
+}, 3000);
+
+
   setTimeout(function(){
-    //do what you need here
-}, 2000);
-  //git commit -m from vdmcli
-  gitCommit(repo_path);
+    //git commit -m from vdmcli
+    gitCommit(repo_path);
+}, 3000);
+
 
   //git create new remote origin
   //gitAddRemoteOrigin(repo_path,repo_name);
