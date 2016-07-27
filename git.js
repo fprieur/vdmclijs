@@ -1,10 +1,14 @@
 var sys = require('util')
 var exec = require('child_process').exec;
 var child;
+var child2;
+
 
 function gitInit(repo_path){
   // git init new repo locally
-  child = exec("git init "+ repo_path, function (error, stdout, stderr) {
+  child = exec("git init ",
+  { cwd: repo_path },
+  function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
@@ -14,7 +18,9 @@ function gitInit(repo_path){
 }
 
 function gitAdd(repo_path){
-  child = exec("git add --all", function (error, stdout, stderr) {
+  child2 = exec("git add .", {
+  cwd: repo_path+"/"
+}, function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
@@ -24,7 +30,9 @@ function gitAdd(repo_path){
 }
 
 function gitCommit(repo_path) {
-  child = exec("git commit -m 'init from vdmcli' ", function (error, stdout, stderr) {
+  child = exec("git commit -m \"init from vdmcli\" ", {
+  cwd: repo_path+"/"
+}, function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
@@ -34,7 +42,9 @@ function gitCommit(repo_path) {
 }
 
 function gitAddRemoteOrigin(repo_path,repo_name){
-  child = exec("git remote add git@github.com:fprieur/"+repo_name+".git ", function (error, stdout, stderr) {
+  child = exec("git remote add origin git@github.com:fprieur/"+repo_name+".git", {
+  cwd: repo_path
+}, function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
@@ -44,7 +54,9 @@ function gitAddRemoteOrigin(repo_path,repo_name){
 }
 
 function gitPush(repo_path){
-  child = exec("git push -u origin master ", function (error, stdout, stderr) {
+  child = exec("git push -u origin master", {
+  cwd: repo_path
+},function (error, stdout, stderr) {
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if (error !== null) {
@@ -56,28 +68,35 @@ function gitPush(repo_path){
 function PushNewrepo(repo_path, repo_name){
 
   setTimeout(function(){
-    // git init new repo locally
-    gitInit(repo_path);
-}, 3000);
+      // git init new repo locally
+      gitInit(repo_path);
+      console.log("git init");
+  }, 3000);
 
   setTimeout(function(){
-    //git add new files
-    gitAdd(repo_path);
-}, 3000);
+      //git add new files
+      console.log("git add");
+      gitAdd(repo_path);
+  }, 6000);
 
 
   setTimeout(function(){
-    //git commit -m from vdmcli
-    gitCommit(repo_path);
-}, 3000);
+      //git commit -m from vdmcli
+      console.log("git commit");
+      gitCommit(repo_path);
+  }, 9000);
 
+  setTimeout(function(){
+    //git create new remote origin
+    console.log("git remote add origin");
+    gitAddRemoteOrigin(repo_path,repo_name);
+  }, 12000);
 
-  //git create new remote origin
-  //gitAddRemoteOrigin(repo_path,repo_name);
-
-  //git push on master
-  //gitPush(repo_path);
-
+  setTimeout(function(){
+    //git push on master
+    console.log("git push");
+    gitPush(repo_path);
+  }, 18000);
 }
 
 exports.PushNewrepo = PushNewrepo;

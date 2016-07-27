@@ -25,7 +25,8 @@ function CreateRepo(name) {
   github.repos.create({
     name: name
   }, function(err, res) {
-      console.log(JSON.stringify(res));
+      //console.log(JSON.stringify(res));
+      console.log("depot créé sur github");
   });
 }
 
