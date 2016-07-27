@@ -12,7 +12,11 @@
     "vdmcli": "./index.js"
   },
   "dependencies": {
+    "bluebird": "^3.4.1",
     "commander": "^2.9.0",
+    "config": "^1.21.0",
+    "dockerode": "^2.2.10",
+    "github": "^2.3.0",
     "request": "^2.73.0",
     "write": "^0.3.1"
   }
