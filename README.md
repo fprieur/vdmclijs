@@ -15,4 +15,4 @@ Si l'installation s'est bien déroulé vous devriez être en mesure la commande 
     * Donnez un nom dans le champ Token description
     * Donnez les droits repo seulement
     * Cliquez Generate token
-* Il faut également inscrire le repertoire de travail du cli pour la génération de fichier dans le même fichier
+* Il faut également inscrire le repertoire de travail du cli pour la génération de fichier dans le même fichier dans le config/default.json du projet à l'endroit prévu à cet effet.
