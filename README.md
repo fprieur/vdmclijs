@@ -10,7 +10,7 @@ Si l'installation s'est bien déroulé vous devriez être en mesure la commande 
 ### Configuration
 * Pour utiliser le cli avec github, vous devez obtenir un token personnel de votre compte github
   Renseignez le par la suite dans le fichier config/default.json du projet
-  * vous pouvez en obtenir un via l'url: (https://github.com/settings/tokens)[https://github.com/settings/tokens]
+  * vous pouvez en obtenir un via l'url: https://github.com/settings/tokens
     * Generate new token
     * Donnez un nom dans le champ Token description
     * Donnez les droits repo seulement
